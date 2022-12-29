@@ -1,0 +1,17 @@
+<h1>LISTA DELLA SPESA</h1><br>
+<div class = "row align-items-center">
+    <div class = "col">
+        <h2>Inserisci qui i prodotti</h2>
+        <%= form_with scope: :todo, url: todos_path do |f|%>
+        <%= f.text_field :item, placeholder: "es. Latte x2" %><br><br>
+        <%= f.submit "Invia", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+    
+    <div class = "col">
+        <h1>lista</h1>
+        <% @todos.each do |todo| %>
+        <p> <%= @todo.item %> </p>
+        <% end %>
+    </div>
+</div>
