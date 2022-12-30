@@ -1,0 +1,10 @@
+<div class = "container align-items-center">
+    <h1>Effettua il login</h1>
+    <%= form_with scope: :persona, url: login_path do |f| %>
+        <%= f.text_field :user, placeholder: "Username" %><br><br>
+        <%= f.password_field :pass, placeholder: "Password" %><br><br>
+        <%= f.submit "Invia", class: "btn btn-primary" %>
+        
+    <% end %>
+    <%= @verifica %>
+</div>

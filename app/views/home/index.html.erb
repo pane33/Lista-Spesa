@@ -9,9 +9,14 @@
     </div>
     
     <div class = "col">
-        <h1>lista</h1>
-        <% @todos.each do |todo| %>
-        <p> <%= @todo.item %> </p>
-        <% end %>
+        <h1>Lista</h1>
+        <ol>
+            <% @todos.each do |todo| %><h3>
+            <li>
+                <%= todo.item %>
+                <small><%= link_to "Elimina", todo, method: :delete %></small>
+            </li></h3>
+            <% end %>
+        </ol>   
     </div>
 </div>
