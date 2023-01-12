@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   
   root to: "home#index"
 
+  get "about", to: "about#index"
+  get "login", to: "login#index"
+
+  post "login", to:"login#create"
+
   resources :todos
   # Defines the root path route ("/")
   # root "articles#index"
