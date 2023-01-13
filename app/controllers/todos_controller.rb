@@ -1,4 +1,7 @@
 class TodosController < ApplicationController
+    def index
+    end
+    
     def create
         @todo = Todo.new(todo_params)
         if @todo.save
@@ -11,6 +14,10 @@ class TodosController < ApplicationController
     def show
         @todo = Todo.all
         @todo = Todo.find(params[:id])
+        destroy()
+    end
+
+    def destroy
         @todo.destroy
         redirect_to root_path
     end
