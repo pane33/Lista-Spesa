@@ -32,9 +32,15 @@
             </li>
             <li class="nav-item">
               <% if user_signed_in? %>  
+<<<<<<< HEAD
                    <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
                 <% else %>
                    <button><%= link_to "Sign in", new_user_session_path %></button>
+=======
+                   <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
+                <% else %>
+                   <%= link_to "Sign in", new_user_session_path %>
+>>>>>>> d455cf5e0121aa7943da46f36215ebe3e2e4c1ed
                 <% end %>
             </li>
           </ul>
@@ -43,6 +49,15 @@
     </nav>
 
     <div class = "container">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <% if user_signed_in? %>
+        <div> Welcome <%= current_user.email %> </div>
+      <% end %>
+=======
+>>>>>>> a56b1cd100ef506ab955bd78d7d6bc1407aa4391
+>>>>>>> d455cf5e0121aa7943da46f36215ebe3e2e4c1ed
       <p class="notice"><%= notice %></p> 
       <p class="alert"><%= alert %></p> 
       <%= yield %>
