@@ -1,5 +1,19 @@
+<<<<<<< HEAD
 
 <h1>LISTA DELLA SPESA DI <%= current_user.email %> </h1><br>
+=======
+<<<<<<< HEAD
+=======
+<% if user_signed_in? %> 
+ <div> Welcome <%= current_user.email %> </div> 
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %> 
+<% end %>
+>>>>>>> d455cf5e0121aa7943da46f36215ebe3e2e4c1ed
+
+<h1>LISTA DELLA SPESA</h1><br>
+>>>>>>> 893b664581a5bac1b152d1b5a69ad42f4b063a06
 
 <div class = "row align-items-center">
     <div class = "col">
