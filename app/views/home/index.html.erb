@@ -1,4 +1,6 @@
-<h1>LISTA DELLA SPESA</h1><br>
+
+<h1>LISTA DELLA SPESA DI <%= current_user.email %> </h1><br>
+
 <div class = "row align-items-center">
     <div class = "col">
         <h2>Inserisci qui i prodotti</h2>
@@ -9,14 +11,18 @@
     </div>
     
     <div class = "col">
-        <h1>Lista</h1>
-        <ol>
-            <% @todos.each do |todo| %><h3>
-            <li>
-                <%= todo.item %>
-                <small><%= link_to "Elimina", todo, method: :delete %></small>
-            </li></h3>
-            <% end %>
-        </ol>   
+        <table class="table table-bordered">
+            <h1>Lista</h1>
+            <tr>
+                <td><b>Prodotto</b></td>
+                <td><b>Clicca per eliminare</b></td>
+            </tr>
+                <% @todos.each do |todo| %>
+                <tr>
+                    <td><%= todo.item %></td>
+                    <td><%= link_to "Elimina", todo, method: :delete %></td>
+                </tr>
+                <% end %>
+        </table>   
     </div>
 </div>
