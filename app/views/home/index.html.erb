@@ -1,5 +1,6 @@
-
-<h1>LISTA DELLA SPESA DI <%= current_user.email %> </h1><br>
+<% if user_signed_in? %>
+        <h1> Benvenuto <%= current_user.email %> </h1>
+<% end %>
 
 <div class = "row align-items-center">
     <div class = "col">
@@ -20,7 +21,7 @@
                 <% @todos.each do |todo| %>
                 <tr>
                     <td><%= todo.item %></td>
-                    <td><%= link_to "Elimina", todo, method: :delete %></td>
+                    <td><%= link_to "Elimina", todo, method: :destroy %></td>
                 </tr>
                 <% end %>
         </table>   
