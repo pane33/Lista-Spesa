@@ -11,9 +11,15 @@ class TodosController < ApplicationController
         end
     end
 
+    def show
+        @todo = Todo.find(params[:id])
+        render :show
+    end
+
     def destroy
         @todo = Todo.find(params[:id])
         @todo.destroy
+        redirect_to root_path
     end
 
     private

@@ -21,9 +21,10 @@
                 <% @todos.each do |todo| %>
                 <tr>
                     <td><%= todo.item %></td>
-                    <td><%= link_to "Elimina", todo, method: :destroy %></td>
+                    <td><%= button_to "Elimina", todo, method: :delete %></td>
+                    <% end %>
                 </tr>
-                <% end %>
+                
         </table>   
     </div>
 </div>
