@@ -18,13 +18,12 @@
                 <td><b>Prodotto</b></td>
                 <td><b>Clicca per eliminare</b></td>
             </tr>
-                <% @todos.each do |todo| %>
+                <% @todo.each do |todo| %>
                 <tr>
                     <td><%= todo.item %></td>
                     <td><%= button_to "Elimina", todo, method: :delete %></td>
                     <% end %>
                 </tr>
-                
         </table>   
     </div>
 </div>

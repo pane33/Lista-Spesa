@@ -5,15 +5,17 @@ class TodosController < ApplicationController
     def create
         @todo = Todo.new(todo_params)
         if @todo.save
+            flash.alert = "todo saved"
             redirect_to root_path
         else
+            flash.alert = "todo not saved"
             redirect_to root_path
         end
     end
 
     def show
         @todo = Todo.find(params[:id])
-        render :show
+        @todo.show
     end
 
     def destroy
