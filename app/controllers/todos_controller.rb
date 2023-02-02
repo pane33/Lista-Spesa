@@ -1,17 +1,13 @@
 class TodosController < ApplicationController
     def index
+        
     end
     
     def create
-        @todo = Todo.new(todo_params)
-        if @todo.save
-            flash.alert = "todo saved"
-            redirect_to root_path
-        else
-            flash.alert = "todo not saved"
-            redirect_to root_path
-        end
+        @todo = Todo.new
+        redirect_to root_path
     end
+       
 
     def show
         @todo = Todo.find(params[:id])
@@ -25,8 +21,11 @@ class TodosController < ApplicationController
     end
 
     private
-
-        def todo_params
-            params.require(:todo).permit(:item)
-        end
+       def set_todo_list
+        @todo_list = TodoList.find(params[:todo_list_id])
+       end
+       
+       def todo_item_params
+        params[:todo_item].permit(:content)
+       end
 end

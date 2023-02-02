@@ -18,7 +18,7 @@
                 <td><b>Prodotto</b></td>
                 <td><b>Clicca per eliminare</b></td>
             </tr>
-                <% @todo.each do |todo| %>
+                <% @todos.each do |todo| %>
                 <tr>
                     <td><%= todo.item %></td>
                     <td><%= button_to "Elimina", todo, method: :delete %></td>
