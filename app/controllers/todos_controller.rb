@@ -1,17 +1,18 @@
 class TodosController < ApplicationController
-    def index
-        
-    end
     
     def create
-        @todo = Todo.new
+        @todo = Todo.new(create_params.merge(user_id: current_user.id))
+        if @todo.save
+            flash.alert = "salvato"
+        else
+            flash.alert = "non salvato"
+        end
         redirect_to root_path
     end
        
 
     def show
         @todo = Todo.find(params[:id])
-        @todo.show
     end
 
     def destroy
@@ -21,11 +22,8 @@ class TodosController < ApplicationController
     end
 
     private
-       def set_todo_list
-        @todo_list = TodoList.find(params[:todo_list_id])
-       end
        
-       def todo_item_params
-        params[:todo_item].permit(:content)
+       def create_params
+        params.require(:todo).permit(:item)
        end
 end
